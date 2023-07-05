@@ -1,0 +1,17 @@
+<div class="container text-center">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="input-group">
+        <label for="machinery-select" class="input-group-text">Seleziona un macchinario:</label>
+        <select id="machinery-select" class="form-select" [(ngModel)]="selected">
+          <option *ngFor="let id of ids" [value]="id">{{ id }}</option>
+        </select>
+        <button class="btn btn-primary ms-2" type="button" (click)="onClick()">Cerca</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
