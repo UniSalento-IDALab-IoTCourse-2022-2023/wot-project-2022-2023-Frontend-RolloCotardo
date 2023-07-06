@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./components/home/home.component";
 import {InfoSearchBarComponent} from "./components/info-search-bar/info-search-bar.component";
+import {AlarmsSearchBarComponent} from "./components/alarms-search-bar/alarms-search-bar.component";
 import {InfoSawComponent} from "./components/info-saw/info-saw.component";
 import {InfoLatheComponent} from "./components/info-lathe/info-lathe.component";
 import {AllInfoComponent} from "./components/all-info/all-info.component";
@@ -20,6 +21,7 @@ const routes: Routes = [
     children: [
       {path:'', component: WelcomeComponent},
       {path: 'info', component : InfoSearchBarComponent, children: [{path: '', component:AllInfoComponent}, {path: 'saw', component:InfoSawComponent}, {path: 'lathe', component:InfoLatheComponent}]},
+      {path:'alarms', component: AlarmsSearchBarComponent},
     ]
   }
 

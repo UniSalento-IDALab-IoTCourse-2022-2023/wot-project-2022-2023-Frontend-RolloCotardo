@@ -5,9 +5,11 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { AlarmComponent } from './components/alarm/alarm.component';
 import { InfoSawComponent } from './components/info-saw/info-saw.component';
 import { InfoLatheComponent } from './components/info-lathe/info-lathe.component';
 import { InfoSearchBarComponent } from './components/info-search-bar/info-search-bar.component';
+import { AlarmsSearchBarComponent } from './components/alarms-search-bar/alarms-search-bar.component';
 import {AlarmService} from "./services/alarm.service";
 import {SawService} from "./services/saw.service";
 import {LatheService} from "./services/lathe.service";
@@ -19,9 +21,11 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    AlarmComponent,
     InfoSawComponent,
     InfoLatheComponent,
     InfoSearchBarComponent,
+    AlarmsSearchBarComponent,
     AllInfoComponent,
     LoginComponent,
     WelcomeComponent,
