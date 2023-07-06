@@ -9,6 +9,9 @@ import {InfoLatheComponent} from "./components/info-lathe/info-lathe.component";
 import {AllInfoComponent} from "./components/all-info/all-info.component";
 import {LoginComponent} from "./components/login/login.component";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
+import {ChartsComponent} from "./components/charts/charts.component";
+import {SawChartComponent} from "./components/saw-chart/saw-chart.component";
+import {LatheChartComponent} from "./components/lathe-chart/lathe-chart.component";
 
 const routes: Routes = [
   {
@@ -20,6 +23,7 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {path:'', component: WelcomeComponent},
+      {path: 'charts', component : ChartsComponent, children: [ {path: 'saw', component:SawChartComponent}, {path: 'lathe', component:LatheChartComponent}]},
       {path: 'info', component : InfoSearchBarComponent, children: [{path: '', component:AllInfoComponent}, {path: 'saw', component:InfoSawComponent}, {path: 'lathe', component:InfoLatheComponent}]},
       {path:'alarms', component: AlarmsSearchBarComponent},
     ]

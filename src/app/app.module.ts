@@ -16,6 +16,9 @@ import {LatheService} from "./services/lathe.service";
 import { AllInfoComponent } from './components/all-info/all-info.component';
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { SawChartComponent } from './components/saw-chart/saw-chart.component';
+import { LatheChartComponent } from './components/lathe-chart/lathe-chart.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     AllInfoComponent,
     LoginComponent,
     WelcomeComponent,
+    ChartsComponent,
+    SawChartComponent,
+    LatheChartComponent,
   ],
   imports: [
     BrowserModule,

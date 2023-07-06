@@ -31,6 +31,24 @@ export class SawService {
     }
   }
 
+  async getById(machine: string)  : Promise<Saw[]|null> {
+    const apiUrl = 'http://localhost:8080/api/info/saws/' + machine
+
+    try {
+      var token = JSON.parse(localStorage.getItem('token')!)
+      const response = await axios.get(apiUrl, {
+        headers: {
+          'Authorization': `Bearer `+token.jwt,
+        },
+      });
+      const saws: Saw[] = response.data;
+      return saws;
+
+    } catch (error) {
+      return null;
+    }
+  }
+
 
   async getLast()  : Promise<Saw|null> {
     const apiUrl = 'http://localhost:8080/api/info/saws/last'

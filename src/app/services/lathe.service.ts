@@ -30,6 +30,24 @@ export class LatheService {
     }
   }
 
+  async getById(machine: string)  : Promise<Lathe[]|null> {
+    const apiUrl = 'http://localhost:8080/api/info/lathes/' + machine
+
+    try {
+      var token = JSON.parse(localStorage.getItem('token')!)
+      const response = await axios.get(apiUrl, {
+        headers: {
+          'Authorization': `Bearer `+token.jwt,
+        },
+      });
+      const lathes: Lathe[] = response.data;
+      return lathes;
+
+    } catch (error) {
+      return null;
+    }
+  }
+
 
   async getLast()  : Promise<Lathe|null> {
     const apiUrl = 'http://localhost:8080/api/info/lathes/last'
