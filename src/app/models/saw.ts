@@ -6,4 +6,5 @@ export interface Saw {
   rotazione: number
   lubrificante: number
   potenza: number
+  timestamp: string
 }

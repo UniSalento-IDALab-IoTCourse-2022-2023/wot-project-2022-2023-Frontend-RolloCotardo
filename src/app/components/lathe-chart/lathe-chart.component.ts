@@ -23,7 +23,7 @@ export class LatheChartComponent {
   arrayLubrificante: number[] = [];
   arrayPotenza: number[] = [];
 
-  arrayLabels: number[] = [];
+  arrayLabels: string[] = [];
 
   slice: number = 10;
   selectedSlice: number = 10;
@@ -60,7 +60,7 @@ export class LatheChartComponent {
         this.arrayLubrificante[i] = this.infoLathe[i].lubrificante;
         this.arrayPotenza[i] = this.infoLathe[i].potenza / 1000;
 
-        this.arrayLabels[i] = i + 1;
+        this.arrayLabels[i] = this.infoLathe[i].timestamp;
       }
 
     }
@@ -137,11 +137,11 @@ export class LatheChartComponent {
           this.arrayLubrificante[i] = this.infoLathe[i].lubrificante;
           this.arrayPotenza[i] = this.infoLathe[i].potenza / 1000;
 
-          this.arrayLabels[i] = i + 1;
+          this.arrayLabels[i] = this.infoLathe[i].timestamp;
         }
 
       }
-
+      this.chart.data.labels = this.arrayLabels;
       this.chart.update();
 
     }, 5000); // Esegui ogni 5 secondi (5000 millisecondi)

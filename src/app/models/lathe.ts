@@ -5,4 +5,5 @@ export interface Lathe {
   rotazione: number
   lubrificante: number
   potenza: number
+  timestamp: string
 }

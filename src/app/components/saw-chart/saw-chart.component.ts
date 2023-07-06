@@ -24,7 +24,7 @@ export class SawChartComponent {
   arrayLubrificante: number[] = [];
   arrayPotenza: number[] = [];
 
-  arrayLabels: number[] = [];
+  arrayLabels: string[] = [];
 
   slice: number = 10;
   selectedSlice: number = 10;
@@ -62,7 +62,7 @@ export class SawChartComponent {
         this.arrayLubrificante[i] = this.infoSaw[i].lubrificante;
         this.arrayPotenza[i] = this.infoSaw[i].potenza;
 
-        this.arrayLabels[i] = i + 1;
+        this.arrayLabels[i] = this.infoSaw[i].timestamp;
       }
 
     }
@@ -147,11 +147,12 @@ export class SawChartComponent {
           this.arrayLubrificante[i] = this.infoSaw[i].lubrificante;
           this.arrayPotenza[i] = this.infoSaw[i].potenza;
 
-          this.arrayLabels[i] = i + 1;
+          this.arrayLabels[i] = this.infoSaw[i].timestamp;
         }
 
       }
 
+      this.chart.data.labels = this.arrayLabels;
       this.chart.update();
 
     }, 5000); // Esegui ogni 5 secondi (5000 millisecondi)
